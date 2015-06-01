@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body >
+
+        <ui:composition template="./WEB-INF/template.xhtml">
+
+            <ui:define name="title">
+                Join us
+            </ui:define>
+
+            <ui:define name="con">
+
+                <nav class="navbar navbar-default" style="background-color: #66afe9; "  >
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" style="color: white">jTechOs </a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li ><a href="#{request.contextPath}" style="color: white">Home</a></li>
+                                <li><a style="color: white" href="#{request.contextPath}/w/what_we_do.xhtml">What we do</a></li>
+                                <li><a href="#{request.contextPath}/w/product.xhtml" style="color: white">Product</a></li>
+                                <li><a href="#{request.contextPath}/w/contact_us.xhtml" style="color: white">Contact</a></li>
+                                <li class="dropdown active">
+                                    <a style=" color: #ffffff; background-color: #3278b3" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Careers<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="active" ><a href="#{request.contextPath}/w/join_us.xhtml" >Join Us</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a style="color: white" href="#{request.contextPath}/w/about_us.xhtml">About Us</a></li>
+                            </ul>
+
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav>
+
+                <div class='row'>
+
+
+                    <h:messages class="#{registerController.error ? 'alert alert-success alert-dismissable':'alert alert-danger alert-dismissable'}" />
+
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8">
+                        <hr></hr> 
+                        <p><strong>Do you want to join us?  </strong></p>
+                        <p>Here at jTechOs , we have every position to suite your status and level of competence , and its also a form of training 
+                            ground with a team of <strong>50 developers</strong> from all over the world</p>
+
+                        <hr></hr>
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Recruitment Positions</h3>
+                            </div>
+
+                            <h:dataTable  class="table table-hover " value="#{contactController.jobList}" var="jb" >
+
+                                <h:column>
+                                    <f:facet name='header'>
+                                        #
+                                    </f:facet>
+                                    <h:outputText value='#{jb.jobId}' />   
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name='header'>
+                                        Position 
+                                    </f:facet>
+                                    <h:outputText value='#{jb.jobTitle}' />   
+                                </h:column>
+
+
+
+
+                                <h:column>
+                                    <f:facet name='header'>
+                                        Apply Before
+                                    </f:facet>
+                                    <h:outputText value='#{jb.applyBefore}' >
+                                        <f:convertDateTime   timeZone="#{contactController.timeZone}" />
+                                    </h:outputText>   
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">
+                                        Actions
+                                    </f:facet>
+
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-primary " id="dropdownMenu1"
+                                                data-toggle="dropdown">
+                                            Topics
+
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" onclick="callModal('#{jb.jobId}')" href="#" >View Description</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" href="#">
+                                                    Apply
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+
+
+                                    <div id="#{jb.jobId}" class="modal" >
+
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div style=" background-color: #bce8f1; border-color: #bce8f1;  color: #31708f; border-radius: 4px 4px 0 0 " class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">
+
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        Job Title : <h:outputText value="#{jb.jobTitle}" />
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:outputText value="#{jb.jobDesc}" />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary"
+                                                            data-dismiss="modal">Close
+                                                    </button>
+
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div>
+                                    </div>
+                                </h:column>
+
+                            </h:dataTable> </div>
+                    </div>
+                    <div class='col-md-3'>
+
+                    </div>
+                </div>
+                <hr></hr>
+                <div class="row" >
+
+
+
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+
+
+
+                        <h:form class="form-horizontal" id="form" enctype="multipart/form-data" >
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">First Name</label>
+                                <div class="col-sm-10">
+                                    <h:inputText value="#{registerController.rc.firstName}" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Last Name</label>
+                                <div class="col-sm-10">
+                                    <h:inputText value="#{registerController.rc.lastName}" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Phone</label>
+                                <div class="col-sm-10">
+                                    <h:inputText value="#{registerController.rc.phone}" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group success ">
+                                <label  class="col-sm-2 control-label">email</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div> 
+                                        <h:inputText value="#{registerController.rc.email}"  class="form-control" />
+                                    </div></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Date Of Birth</label>
+                                <div class="col-sm-4">
+                                    <div class='input-group date' id='datetimepicker2'>
+                                        <h:inputText value="#{registerController.rc.dob}" class="form-control" >
+                                            <f:convertDateTime pattern="yyyy-MM-dd"  />
+                                        </h:inputText>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6"></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Years of Experience</label>
+                                <div class="col-sm-4">
+                                    <h:inputText value="#{registerController.rct.yearsOfExperience}" class="form-control" />
+                                </div>
+                                <div class="col-sm-6">
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label  class="col-sm-2 control-label">Technology</label>
+                                <div class="col-sm-10">
+                                    <h:selectManyListbox class="form-control" value="#{registerController.selectedTechList}" >
+                                         <f:selectItems value="#{registerController.techList}" itemLabel="#{fo.skillName}" var="fo" />  
+                                         <f:converter converterId="sconvert" />
+                                    </h:selectManyListbox>
+                                    
+                                    
+                                </div> 
+
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Relational Database</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.relationalDatabase}" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Issue Tracking</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.issueTracking}" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Subversioning</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.subversioning}" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Frameworks</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.subversioning}" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Proficiency Level</label>
+                                <div class="col-sm-4">
+                                    <h:selectOneMenu value="#{registerController.rct.proficiencyLevel}" class="form-control" >
+
+                                        <f:selectItem itemLabel="Senior" /> 
+                                        <f:selectItem itemLabel="Intermediate" />  
+                                        <f:selectItem itemLabel="Junior / Intern" />
+                                        <f:selectItem  itemLabel="Expert" />  
+                                    </h:selectOneMenu>
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Front-End Technology</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.frontEndTech}" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Apps </label>
+                                <div class="col-sm-10">
+
+                                    <label class="checkbox-inline">
+                                        <h:selectBooleanCheckbox class="checkbox-inline" value="#{registerController.rct.isMobiledev}" /> Mobile Developer
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Past projects</label>
+                                <div class="col-sm-10">
+                                    <h:inputTextarea value="#{registerController.rct.briefSummaryOnPastProj}" rows="5" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Resume</label>
+                                <div class="col-sm-10">
+
+                                    <h:inputFile required="true" requiredMessage="You did not select a file" value="#{registerController.file}"  id="file" />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <h:commandButton binding="#{registerController.component}" action="#{registerController.recruitRegistration}" class="btn btn-primary" value="Submit" />
+                                </div>
+                            </div>
+                        </h:form>  
+                    </div>
+                    <div  class="col-md-4"></div>
+
+                </div>
+
+
+
+            </ui:define>
+
+            <ui:define name="tech"></ui:define>
+        </ui:composition>
+
+    </body>
+</html>

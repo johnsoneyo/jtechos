@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/template.xhtml">
+
+            <ui:define name="title">
+                Contact Us
+            </ui:define>
+
+            <ui:define name="con">
+                <nav class="navbar navbar-default" style="background-color: #66afe9; "  >
+                    <div class="container-fluid">
+                        <div  class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" style="color: white">jTechOs </a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li ><a style="color: white" href="#{request.contextPath}">Home</a></li>
+                                <li><a style="color: white" href="#{request.contextPath}/w/what_we_do.xhtml">What we do</a></li>
+                                <li><a style="color: white" href="#{request.contextPath}/w/product.xhtml">Product</a></li>
+                                <li class="active" ><a  href="#{request.contextPath}/w/contact_us.xhtml" style=" color: #ffffff; background-color: #3278b3">Contact</a></li>
+                                <li class="dropdown">
+                                    <a style="color: white; background-color: #66afe9;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Careers<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a style="color: white; background-color: #66afe9;" href="#{request.contextPath}/w/join_us.xhtml">Join Us</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a style="color: white" href="#{request.contextPath}/w/about_us.xhtml">About Us</a></li>
+                            </ul>
+
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav>
+
+
+
+
+            </ui:define>
+
+            <ui:define name="tech">
+               
+                <h:messages class="#{contactController.error ? 'alert alert-success alert-dismissable':'alert alert-danger alert-dismissable'}" />
+             
+                
+                <div class='row'>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <blockquote> Thanks for reaching us or stopping by, you can leave a message and we will be glad to hear from you
+                      Your feedback or comments are very much required to serving you better,
+                      regards.
+                      <small> CEO. Johnson Eyo</small></blockquote>
+
+                        <hr></hr>
+
+                        <h:form class="form-horizontal" >
+                            <div class="form-group">
+                                <label  class="col-sm-4 control-label">Company Name</label>
+                                <div class="col-sm-8">
+                                    <h:inputText required="true" requiredMessage="please fill org name" value="#{contactController.contact.contactOrgName}" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                                <label  class="col-sm-4 control-label">Message</label>
+                                <div class="col-sm-8">
+                                    <h:inputTextarea required="true" requiredMessage="please enter message" value="#{contactController.contact.contactMessage}" class="form-control" rows="5" />
+                                </div>
+                            </div>
+                          
+                            <div class="form-group">
+                                    <label  class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                  <label >Please answer this question to verify you are not a bot</label>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-4 control-label"><h:outputText value="#{contactController.question.question} " /></label>
+                                <div class="col-sm-8">
+                                    <h:inputText value="#{contactController.answer}" class="form-control" />
+                                </div>
+                            </div>
+                              
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <h:commandButton binding="#{contactController.component}" action="#{contactController.send}" value="Leave a message" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </h:form>
+                    </div> 
+                    <div class="col-md-2">
+                        
+                    </div> 
+                    <div  class="col-md-2">
+                        <p class="add_con" >Address</p>
+                         <address >
+                                <strong>jTechOs Inc.</strong><br></br>
+                                12 Ashimowu , new garage<br></br>
+                                Gbagada,Lagos State XXXXX<br></br>
+                                <abbr title="Phone">P:</abbr> (234) 70-888-12651
+                            </address>
+                            <address >
+                                <strong>J. Tech Outsourcing</strong><br></br>
+                                <a href="mailto:#">info@jtechos.com</a>
+                            </address>
+                        <hr></hr>
+                    </div> 
+                    <div class="col-md-3"></div> 
+
+                </div>
+
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

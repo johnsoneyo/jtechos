@@ -1,0 +1,13 @@
+/* 
+    Document   : jtech_min
+    Created on : May 18, 2015, 3:06:53 PM
+    Author     : johnson3yo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+p.tech_foot:hover{
+    background-color: transparent;
+    color: white;
+    
+}

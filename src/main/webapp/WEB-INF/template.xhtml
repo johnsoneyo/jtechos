@@ -1,0 +1,300 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title><ui:insert name="title">Java Tech Outsourcing</ui:insert></title>
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content=""></meta>
+        <meta name="author" content=""></meta>
+        <link rel="icon" href="../../favicon.ico"></link>
+
+        <!-- Bootstrap core CSS -->
+        <link href="resources/css/carousel.css" rel="stylesheet" ></link>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="resources/fa/css/font-awesome.css" rel="stylesheet"></link>
+        <link href="resources/css/zabuto_calendar.min.css" rel="stylesheet"></link>
+        <link href="resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet"></link>
+
+        <!-- Custom styles for this template -->
+        <!--    <link href="resources/css/navbar.css" rel="stylesheet">-->
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </h:head>
+
+    <h:body >
+
+
+
+        <ui:insert name="banner">
+            <div class="row" style="margin-top:10px;">
+                <div class="col-md-6">
+                    <h:graphicImage width="100" height="100" value="resources/img/j techos.png" />
+                </div>
+                <div class="col-md-6">
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search"/>
+ 
+                        </div>
+                        <button type="submit" class="btn btn-info">Search
+                            <i class="fa fa-1x fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div> 
+        </ui:insert>
+
+        <ui:insert name="con">
+
+
+
+            <nav class="navbar navbar-default" style="background-color: #66afe9; margin-bottom: 0px; "  >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" style="color: white" href="#"><i class="glyphicon glyphicon-log-out"></i></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#" style=" color: #ffffff; background-color: #3278b3 ">Home</a></li>
+                            <li><a style="color: white" href="#{request.contextPath}/w/what_we_do.xhtml">What we do</a></li>
+                            <li><a style="color: white" href="#{request.contextPath}/w/product.xhtml">Product</a></li>
+                            <li><a style="color: white" href="#{request.contextPath}/w/contact_us.xhtml">Contact</a></li>
+                            <li class="dropdown">
+                                <a style="color: white; background-color: #66afe9;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Careers<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a style="color: white; background-color: #66afe9;" href="#{request.contextPath}/w/join_us.xhtml">Join Us</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a style="color: white" href="#{request.contextPath}/w/about_us.xhtml">About Us</a></li>
+                        </ul>
+
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+
+
+            <div id="myCarousel" style="margin-bottom: 0px;"  class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div style="background-image: url(resources/img/large.jpg)"  class="item active">
+                        <div class="container">
+                            <div class="carousel-caption">
+
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Hire us today &#187;</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background-image: url(resources/img/hmm.jpeg)" class="item">
+                        <div   class="container">
+                            <div class="carousel-caption">
+
+
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more &#187;</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  style="background-image: url(resources/img/lighg)" class="item">
+                        <div   class="container">
+                            <div class="carousel-caption">
+
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery &#187;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div> 
+        </ui:insert>
+        <hr></hr>
+        <ui:insert name="tech">
+            <div class="container">
+                <!-- Example row of columns -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4"><h:graphicImage width="100" height="100" value="resources/img/download.jpg" /></div>
+                            <div class="col-md-4"><h:graphicImage width="97" height="59"  value="resources/img/download (1).png" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="38"  value="resources/img/download.png" /></div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4"><h:graphicImage value="resources/img/apache.png" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="38"  value="resources/img/download (1).jpg" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="58" value="resources/img/images.png" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="28" value="resources/img/images (1).jpg" /></div>
+                        </div>  
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4"><h:graphicImage width="100" height="50" value="resources/img/images (4).png" /></div> 
+                        <div class="col-md-4"><h:graphicImage width="100" height="50" value="resources/img/images (3).png" /></div> 
+                        <div class="col-md-4"><h:graphicImage width="100" height="50" value="resources/img/images (1).png" /></div> 
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4"><h:graphicImage width="100" height="100" value="resources/img/images (3).jpg" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="27" value="resources/img/images (5).png" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="40" value="resources/img/download (3).jpg" /></div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4"><h:graphicImage width="150" height="40" value="resources/img/download (2).jpg" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="45" value="resources/img/images (6).png" /></div>
+                            <div class="col-md-4"><h:graphicImage width="100" height="45" value="resources/img/download (4).jpg" /></div>
+
+                        </div>  
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-4"><h:graphicImage width="50" height="50" value="resources/img/html5.png" /></div>
+
+                        <div class="col-md-4"><h:graphicImage width="50" height="50" value="resources/img/Grails-logo.png" /></div>
+
+                        <div class="col-md-4"><h:graphicImage width="100" height="30" value="resources/img/angular.png" /></div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </ui:insert>
+
+
+
+
+        <hr></hr>
+        <ui:insert name="footer">
+
+            <footer >
+
+
+                <div class="row" style="background-color:  whitesmoke; padding-top: 10px;">
+
+                    <div class="col-md-2">     </div>
+                    <div  class="col-md-3">
+                        <h5 class="sizo">Follow us</h5>
+                        <p class='tech_foot' ><img width="40" height="40" src="resources/3d-social/Linkedin.png"></img>&#160;linkedIn</p>
+                        <p class='tech_foot'><img width="40" height="40" src="resources/3d-social/Blogger.png"></img>&#160;blogger</p>
+                        <p class='tech_foot'><img width="40" height="40" src="resources/3d-social/facebook.png">&#160;facebook</img></p>
+                        <p class='tech_foot'><img width="40" height="40" src="resources/3d-social/Twitter-2.png"></img>&#160;twitter</p>
+
+                    </div>
+                    <div class="col-md-3">  
+                        <h5 class="sizo">Contact us</h5>
+
+                        <address class="addy">
+                            <strong>jTechOs Inc.</strong><br></br>
+                            12 Ashimowu , new garage<br></br>
+                            Gbagada,Lagos State XXXXX<br></br>
+                            <abbr title="Phone">P:</abbr> (234) 70-888-12651
+                        </address>
+                        <address >
+                            <strong>J. Tech Outsourcing</strong><br></br>
+                            <a href="mailto:#">info@jtechos.com</a>
+                        </address>
+                    </div> 
+                    <div class="col-md-2"> 
+
+                        <h5 class="sizo">Receive Job Updates</h5>
+                        <div class="form-group">
+                            <h:form>
+                                <p> <div class="input-group"><div class="input-group-addon">@</div> <h:inputText id="datetimepicker1" value="#{generalEJB.email}" class="form-control" /></div> </p> 
+                                <p><h:commandButton action="#{generalEJB.check}" value="Sign Up" class="btn btn-primary" /></p>
+                            </h:form>
+                        </div>
+                    </div>
+
+                    <div class="col-md2"></div>
+
+                </div>
+                <div class="row" style="color:white; background-color:  #3278b3; height: 100px;  " >
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4"><h6>Copyright &#169; 2015 &#160; jTechOs  Software. All Rights Reserved </h6></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                </div>  
+            </footer>
+
+        </ui:insert> 
+
+
+
+
+
+
+
+        <script src="resources/js/jquery.min.js" ></script>
+        <script src="resources/js/bootstrap.min.js" ></script>
+        <script src="resources/js/transition.js" ></script>
+        <script src="resources/js/collapse.js" ></script>
+        <script src="resources/js/zabuto_calendar.min.js" ></script>
+        <script src="resources/js/moment.js" ></script>
+        <script src="resources/js/bootstrap-datetimepicker.min.js" ></script>
+        <script src="resources/js/jquery.validate.js"></script>
+        <script src="resources/js/modal.js"></script>
+        <script src="resources/js/jtechos.js"></script>
+
+        <script type="text/javascript">// <![CDATA[
+            var $ = jQuery.noConflict();
+            $(document).ready(function() {
+
+                $('#myCarousel').carousel({interval: 3000, cycle: true});
+
+                $('#datetimepicker2').datetimepicker({
+                    viewMode:'years',
+                  format: 'YYYY-MM-DD'
+                });
+                
+              
+               $('#form').validate();
+
+
+            });
+// ]]></script>
+
+
+
+    </h:body>
+
+
+</html>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/template.xhtml">
+
+            <ui:define name="title">
+                About Us
+            </ui:define>
+
+            <ui:define name="con">
+                <nav class="navbar navbar-default" style="background-color: #66afe9; "  >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" style="color: white" href="#">jTechOs </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li ><a style="color: white" href="#{request.contextPath}">Home</a></li>
+                             <li><a style="color: white" href="#{request.contextPath}/w/what_we_do.xhtml">What we do</a></li>
+                            <li><a style="color: white" href="#{request.contextPath}/w/product.xhtml">Product</a></li>
+                            <li ><a style="color: white" href="#{request.contextPath}/w/contact_us.xhtml">Contact</a></li>
+                            <li class="dropdown">
+                                <a style="color: white;  background-color: #66afe9;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Careers<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a style="color: white;  background-color: #66afe9;" href="#{request.contextPath}/w/join_us.xhtml">Join Us</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="active"><a href="#" style=" color: #ffffff; background-color: #3278b3">About Us</a></li>
+                        </ul>
+
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+            </ui:define>
+            
+            <ui:define name="tech"></ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
